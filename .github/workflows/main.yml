@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [ master, terraform ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+
+      - name: Terraform Format
+        run: terraform fmt -check
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate -no-color
+      
+      # - name: Terraform Plan
+      #   if: github.event_name == 'pull_request'
+      #   run: terraform plan -no-color
+      #   continue-on-error: true
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+
+      - name: Terraform Show
+        run: terraform show
+
+      # - name: Create Azure Credentials File
+      #   run: |
+      #     sudo touch ~/.azure/credentials
+      #     sudo chmod 777 ~/.azure/credentials
+      #     sudo echo "$CREDS" > ~/.azure/credentials
+      #   env:
+      #     CREDS: ${{ secrets.AZURE_CREDS_INI }}
