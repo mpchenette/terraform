@@ -1,6 +1,18 @@
-# variable "az" {
-#   type = map
-# }
+variable "subscriptionId" {
+  type = string
+}
+
+variable "clientId" {
+  type = string
+}
+
+variable "clientSecret" {
+  type = string
+}
+
+variable "tenantId" {
+  type = string
+}
 
 terraform {
   required_providers {
