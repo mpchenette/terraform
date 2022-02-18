@@ -10,7 +10,7 @@ on:
 
 jobs:
   terraform:
-    environment: Azure # Name of Env in GitHub Actions so I can reference specific vars
+    # environment: Azure # Name of Env in GitHub Actions so I can reference specific vars
     runs-on: ubuntu-latest
 
     steps:
