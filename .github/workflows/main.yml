@@ -10,12 +10,13 @@ on:
 
 jobs:
   terraform:
+    environment: Azure # Name of Env in GitHub Actions so I can reference specific vars
     runs-on: ubuntu-latest
 
     steps:
       - uses: azure/login@v1
         with:
-          creds: ${{ env.AZURE_CREDENTIALS }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - uses: actions/checkout@v2
 
