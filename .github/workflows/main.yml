@@ -39,7 +39,7 @@ jobs:
       - name: Terraform Apply
         run: |
           touch azureProfile.tfvars.json
-          cp ~/.azure/azureProfile.json > azureProfile.auto.tfvars.json
+          cp ~/.azure/azureProfile.json azureProfile.auto.tfvars.json
           terraform apply -auto-approve
 
       - name: Terraform Show
