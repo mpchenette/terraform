@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ master, terraform ]
+    branches: [ master, demo ]
   pull_request:
     branches: [ master ]
 
