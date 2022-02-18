@@ -37,7 +37,10 @@ jobs:
       #   continue-on-error: true
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: |
+          touch azureProfile.tfvars.json
+          cp ~/.azure/azureProfile.json > azureProfile.auto.tfvars.json
+          terraform apply -auto-approve
 
       - name: Terraform Show
         run: terraform show
