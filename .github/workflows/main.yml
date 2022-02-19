@@ -38,6 +38,8 @@ jobs:
 
       - name: Terraform Apply
         run: |
+          cat ~/.azure/azureProfile.json
+          echo ~~~~~~~~
           touch azureProfile.tfvars.json
           cp ~/.azure/azureProfile.json azureProfile.auto.tfvars.json
           terraform apply -auto-approve
