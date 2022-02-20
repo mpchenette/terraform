@@ -18,7 +18,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "=2.97.0"
+      version = ">=2.97.0"
     }
   }
 }
@@ -33,6 +33,6 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "terraform-demo"
+  name     = "terraform-demo-2"
   location = "southcentralus"
 }
