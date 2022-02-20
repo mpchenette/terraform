@@ -51,11 +51,3 @@ jobs:
 
       - name: Terraform Show
         run: terraform show
-
-      # - name: Create Azure Credentials File
-      #   run: |
-      #     sudo touch ~/.azure/credentials
-      #     sudo chmod 777 ~/.azure/credentials
-      #     sudo echo "$CREDS" > ~/.azure/credentials
-      #   env:
-      #     CREDS: ${{ secrets.AZURE_CREDS_INI }}
