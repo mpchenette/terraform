@@ -42,7 +42,7 @@ jobs:
             -var "client_id=$CLIENT_ID" \
             -var "client_secret=$CLIENT_SECRET" \
             -var "tenant_id=$TENANT_ID" \
-            -var "subscription_id=$SUBSCRIPTION_ID" \
+            -var "subscription_id=$SUBSCRIPTION_ID"
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
